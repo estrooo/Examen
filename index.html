@@ -37,21 +37,21 @@
 
     <script>
         function calculateSum() {
-            // Отримати значення з трьох введених полів
+            // отримання значень з інпутів
             var num1 = parseFloat(document.getElementById("input1").value);
             var num2 = parseFloat(document.getElementById("input2").value);
             var num3 = parseFloat(document.getElementById("input3").value);
 
-            // Перевірити, чи введені значення є числами
+            // перевірка на валідність даних
             if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
                 alert("Please enter valid numbers");
-                return; // Зупинити виконання функції, якщо введено не числові значення
+                return; 
             }
 
-            // Обчислити суму
+
             var sum = num1 + num2 + num3;
 
-            // Створити новий елемент input
+            // створення нового інпут
             var resultInput = document.createElement("input");
 
             // Задати йому атрибути
@@ -59,7 +59,7 @@
             resultInput.value = sum;
             resultInput.readOnly = true;
 
-            // Додати новий елемент input до body
+            //виведення в body
             document.body.appendChild(resultInput);
         }
     </script>
