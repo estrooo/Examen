@@ -4,38 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-    <input type="text" id="input1" placeholder="Введіть число">
-    <input type="text" id="input2" placeholder="Введіть число">
-    <input type="text" id="input3" placeholder="Введіть число">
+    <input type="text" id="input1" placeholder="Enter number 1">
+    <input type="text" id="input2" placeholder="Enter number 2">
+    <input type="text" id="input3" placeholder="Enter number 3">
 
     <button onclick="calculateSum()">Calculate Sum</button>
 
     <script>
         function calculateSum() {
-            // отримання значень з полів
+            // Отримати значення з трьох введених полів
             var num1 = parseFloat(document.getElementById("input1").value);
             var num2 = parseFloat(document.getElementById("input2").value);
             var num3 = parseFloat(document.getElementById("input3").value);
 
-            // перевірка на валідність даних
+            // Перевірити, чи введені значення є числами
             if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
                 alert("Please enter valid numbers");
-                return;
+                return; // Зупинити виконання функції, якщо введено не числові значення
             }
 
+            // Обчислити суму
             var sum = num1 + num2 + num3;
 
-            // створення input та задання йому атрибутів
+            // Створити новий елемент input
             var resultInput = document.createElement("input");
 
+            // Задати йому атрибути
             resultInput.type = "text";
             resultInput.value = sum;
             resultInput.readOnly = true;
 
-            // додавання нового елемента в body в html
+            // Додати новий елемент input до body
             document.body.appendChild(resultInput);
         }
     </script>
